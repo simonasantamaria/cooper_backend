@@ -1,1 +1,1 @@
-worker: uvicorn main:app --host=0.0.0.0 
+web: sh setup.sh &&  uvicorn main:app --host=0.0.0.0
