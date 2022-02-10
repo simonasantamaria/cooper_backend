@@ -15,7 +15,7 @@ from database import (
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000",
+    "http://0.0.0.0:3000",
 ]
 
 app.add_middleware(
