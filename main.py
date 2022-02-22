@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
-#from fastapi.middleware.cors import CORSMiddleware
-from starlette.middleware import Middleware
-from starlette.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware
+#from starlette.middleware import Middleware
+#from starlette.middleware.cors import CORSMiddleware
 
 from model import Todo
 
@@ -13,32 +13,24 @@ from database import (
     remove_todo,
 )
 
-middleware = [
-    Middleware(
-        CORSMiddleware,
-        allow_origins=['*'],
-        allow_credentials=True,
-        allow_methods=['*'],
-        allow_headers=['*']
-    )
-]
-
 
 #App object
-app = FastAPI(middleware=middleware)
+app = FastAPI()
 
 origins = [
     "http://0.0.0.0:3000",
+    "http://waver-ryver.netlify.app",
     "https://waver-ryver.netlify.app",
 ]
-#app.add_middleware(
-#    CORSMiddleware,
-#    allow_origins=origins,
-#    allow_credentials=True,
-#    allow_methods=["*"],
-#    allow_headers=["*"],
-#    expose_headers=["*"],
-#)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["POST", "GET"],
+    #allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["*"],
+)
 
 @app.get("/")
 async def read_root():
