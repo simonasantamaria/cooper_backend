@@ -9,6 +9,7 @@ from dotenv import dotenv_values
 #import os
 #str(os.environ.get(MONGODB_URI))
 
+import boto
 from boto.s3.connection import S3Connection
 MONGODB_URI = S3Connection(os.environ['MONGODB_URI'])
 
