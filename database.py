@@ -1,5 +1,5 @@
 import sys
-
+import logging
 import motor.motor_asyncio
 
 from model import Todo
@@ -9,7 +9,9 @@ from dotenv import dotenv_values
 config = dotenv_values(".env")
 MONGODB_URI = config.get("MONGODB_URI")
 print("MONGODB_URI",MONGODB_URI)
-console.log(MONGODB_URI)
+
+logging.warning('Watch out!') 
+logging.warning(MONGODB_URI)
 
 #MONGODB_URI = DATABASE_URL
 #print("URL",MONGODB_URI)
