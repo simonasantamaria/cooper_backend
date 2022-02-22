@@ -16,9 +16,8 @@ app = FastAPI()
 
 origins = [
     "http://0.0.0.0:3000",
-    "https://waver-ryver.netlify.app/",
+    "https://waver-ryver.netlify.app",
 ]
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
