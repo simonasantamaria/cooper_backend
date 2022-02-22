@@ -6,6 +6,9 @@ from model import Todo
 
 from dotenv import dotenv_values
 
+import os
+str(os.environ.get(MONGODB_URI))
+
 config = dotenv_values(".env")
 MONGODB_URI = config.get("MONGODB_URI")
 print("MONGODB_URI",MONGODB_URI)
