@@ -9,6 +9,7 @@ from dotenv import dotenv_values
 config = dotenv_values(".env")
 MONGODB_URI = config.get("MONGODB_URI")
 print("MONGODB_URI",MONGODB_URI)
+
 #MONGODB_URI = DATABASE_URL
 #print("URL",MONGODB_URI)
 
